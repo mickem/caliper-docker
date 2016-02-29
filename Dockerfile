@@ -4,8 +4,8 @@ RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-
 RUN     yum install -y textutils tar unzip util-linux git
 RUN     yum install -y npm
 
-ENV CALIPER_DOWNLOAD_URL https://github.com/mickem/Caliper/archive/v0.3.2.tar.gz
-ENV CALIPER_DOWNLOAD_SHA1 2a17634ba30e4e33f3dd6469154b85689488c004
+ENV CALIPER_DOWNLOAD_URL https://github.com/mickem/Caliper/archive/v0.3.4.tar.gz
+ENV CALIPER_DOWNLOAD_SHA1 cb380a32957241d5de4a8e372b66a8709191bdd1
 ENV CALIPER_VERSION 0.3.2
 ENV MINI_BREAKPAD_SERVER_PORT 8080
 
@@ -23,4 +23,4 @@ RUN cd /usr/local/caliper && npm install
 RUN cd /usr/local/caliper && ./node_modules/.bin/grunt
 
 EXPOSE  8080
-CMD ["/usr/local/caliper/bin/mini-breakpad-server"]
+CMD ["/usr/local/caliper/bin/caliper"]
