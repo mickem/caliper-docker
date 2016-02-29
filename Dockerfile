@@ -25,4 +25,7 @@ RUN cd /usr/local/caliper && ./node_modules/.bin/grunt
 RUN chmod 755 /usr/local/caliper/bin/caliper
 
 EXPOSE  8080
+VOLUME ["/usr/local/caliper/pool"]
+
+WORKDIR /usr/local/caliper
 CMD ["/usr/local/caliper/bin/caliper"]
